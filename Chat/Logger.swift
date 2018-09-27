@@ -26,20 +26,20 @@ class Logger { // he logs only when we use target with flag -DWITH_LOG set
     
     var previousState: UIApplication.State = UIApplication.shared.applicationState
     
-    func сhangeAppState(methodName: String) {
+    func logApplicationTurnOn(methodName: String) {
         #if WITH_LOG
-            if methodName == "application(_:didFinishLaunchingWithOptions:)" {
-                print("Application moved from <Not runnnig> to <\(UIApplication.shared.applicationState.toString())>: <\(methodName)>")
-                previousState = UIApplication.shared.applicationState
-            } // was added for more beautiful logging , but it could be commited
-        
-            else {
-                print("Application moved from <\(previousState.toString())> to <\(UIApplication.shared.applicationState.toString())>: <\(methodName)>")
-                previousState = UIApplication.shared.applicationState
-            }
+            print("Application moved from <Not runnnig> to <\(UIApplication.shared.applicationState.toString())>: <\(methodName)>")
+            previousState = UIApplication.shared.applicationState
         #endif
     }
-    func curMethod(methodName: String) {
+    
+    func logChangeAppState(methodName: String) {
+        #if WITH_LOG
+            print("Application moved from <\(previousState.toString())> to <\(UIApplication.shared.applicationState.toString())>: <\(methodName)>")
+            previousState = UIApplication.shared.applicationState
+        #endif
+    }
+    func logCurMethod(methodName: String) {
         #if WITH_LOG
             print("<\(methodName)>")
         #endif
