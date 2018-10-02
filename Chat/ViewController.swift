@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    private let imagePickerController = UIImagePickerController()
+    //private let imagePickerController = UIImagePickerController()
     
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
@@ -20,16 +20,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let changePhotoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         changePhotoAlert.addAction(UIAlertAction(title: "Установить из галереи", style: .default, handler: { _ in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                self.imagePickerController.sourceType = .photoLibrary
-                self.imagePickerController.allowsEditing = true
-                self.present(self.imagePickerController, animated: true, completion: nil)
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = true
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            else {
+                let galleryProblemAlert = UIAlertController(title: nil, message: "Не удалось открыть галлерею", preferredStyle: .alert)
+                galleryProblemAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(galleryProblemAlert, animated: true)
             }
         }))
         changePhotoAlert.addAction(UIAlertAction(title: "Сделать фото", style: .default, handler: { _ in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                self.imagePickerController.sourceType = .camera
-                self.imagePickerController.allowsEditing = false
-                self.present(self.imagePickerController, animated: true, completion: nil)
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .camera
+                imagePicker.allowsEditing = false
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            else {
+                let cameraProblemAlert = UIAlertController(title: nil, message: "Не удалось открыть камеру", preferredStyle: .alert)
+                cameraProblemAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(cameraProblemAlert, animated: true)
             }
         }))
         changePhotoAlert.addAction(
@@ -53,36 +67,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickerController.delegate = self
         logger.logCurMethod(methodName: #function)
         //print(self.editButton.frame) No mistake!
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//
-//        logger.logCurMethod(methodName: #function)
-//        let cornerRadius = self.changePhotoButton.frame.size.height / 1.75
-//        self.changePhotoButton.layer.cornerRadius = cornerRadius
-//        self.changePhotoButton.layer.masksToBounds = true
-//        self.changePhotoButton.imageView?.contentMode = .scaleAspectFit
-//        self.changePhotoButton.imageEdgeInsets = UIEdgeInsets(
-//            top: cornerRadius/2.5,
-//            left: cornerRadius/2.5,
-//            bottom: cornerRadius/2.5,
-//            right: cornerRadius/2.5)
-//
-//        self.profilePhoto.layer.cornerRadius = cornerRadius
-//        self.profilePhoto.layer.masksToBounds = true
-//
-//        self.editButton.layer.cornerRadius = cornerRadius / 4
-//        self.editButton.layer.borderWidth = 1.5
-//        self.editButton.layer.borderColor = UIColor.black.cgColor
-//        self.editButton.titleEdgeInsets = UIEdgeInsets(
-//            top: cornerRadius / 2,
-//            left: cornerRadius / 2,
-//            bottom: cornerRadius / 2,
-//            right: cornerRadius / 2)
     }
     
     
@@ -92,15 +82,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let cornerRadius = self.changePhotoButton.frame.size.height / 2
         self.changePhotoButton.layer.cornerRadius = cornerRadius
         self.changePhotoButton.layer.masksToBounds = true
-        self.changePhotoButton.imageView?.contentMode = .scaleAspectFit
+        //self.changePhotoButton.imageView?.contentMode = .scaleAspectFit
         self.changePhotoButton.imageEdgeInsets = UIEdgeInsets(
             top: cornerRadius / 2.5,
             left: cornerRadius / 2.5,
             bottom: cornerRadius / 2.5,
             right: cornerRadius / 2.5)
         
-        self.profilePhoto.layer.cornerRadius = cornerRadius
         self.profilePhoto.layer.masksToBounds = true
+        self.profilePhoto.layer.cornerRadius = cornerRadius
         
         self.editButton.layer.cornerRadius = cornerRadius / 4
         self.editButton.layer.borderWidth = 1.5
