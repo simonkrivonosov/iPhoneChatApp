@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProfileViewController.swift
 //  Chat
 //
 //  Created by Семен Кривоносов on 22.09.2018.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    //private let imagePickerController = UIImagePickerController()
     
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var changePhotoButton: UIButton!
+    @IBAction func tapDoneButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func tapChangePhoto(_ sender: UIButton) {
         let changePhotoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -79,6 +81,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        //print(self.editButton.frame) values of the frames are different because in veiwDidLoad methood constraints haven't been set yet.
+
+        logger.logCurMethod(methodName: #function)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        logger.logCurMethod(methodName: #function)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         let cornerRadius = self.changePhotoButton.frame.size.height / 2
         self.changePhotoButton.layer.cornerRadius = cornerRadius
         self.changePhotoButton.layer.masksToBounds = true
@@ -101,18 +116,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             bottom: cornerRadius / 2,
             right: cornerRadius / 2)
         
-        //print(self.editButton.frame) values of the frames are different because in veiwDidLoad methood constraints haven't been set yet.
-
-        logger.logCurMethod(methodName: #function)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        logger.logCurMethod(methodName: #function)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         logger.logCurMethod(methodName: #function)
     }
     

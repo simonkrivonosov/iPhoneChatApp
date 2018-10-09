@@ -8,24 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		F455715B21564CCF00E00E50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455715A21564CCF00E00E50 /* AppDelegate.swift */; };
-		F455715D21564CCF00E00E50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455715C21564CCF00E00E50 /* ViewController.swift */; };
+		F455715D21564CCF00E00E50 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455715C21564CCF00E00E50 /* ProfileViewController.swift */; };
 		F455716021564CCF00E00E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F455715E21564CCF00E00E50 /* Main.storyboard */; };
 		F455716321564CCF00E00E50 /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F455716121564CCF00E00E50 /* Chat.xcdatamodeld */; };
 		F455716521564CD000E00E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F455716421564CD000E00E50 /* Assets.xcassets */; };
 		F455716821564CD000E00E50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F455716621564CD000E00E50 /* LaunchScreen.storyboard */; };
 		F455717021564D8B00E00E50 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455716F21564D8B00E00E50 /* Logger.swift */; };
+		F46F7728216AAA2200C77EBA /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F7727216AAA2200C77EBA /* ConversationsListViewController.swift */; };
+		F46F772E216BA0C900C77EBA /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F772D216BA0C900C77EBA /* ConversationCell.swift */; };
+		F46F7733216BAFD000C77EBA /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F7732216BAFD000C77EBA /* ConversationViewController.swift */; };
+		F46F7737216BB24500C77EBA /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F7736216BB24500C77EBA /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F455715721564CCF00E00E50 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F455715A21564CCF00E00E50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F455715C21564CCF00E00E50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F455715C21564CCF00E00E50 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F455715F21564CCF00E00E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F455716221564CCF00E00E50 /* Chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat.xcdatamodel; sourceTree = "<group>"; };
 		F455716421564CD000E00E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F455716721564CD000E00E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F455716921564CD000E00E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F455716F21564D8B00E00E50 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F46F7727216AAA2200C77EBA /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
+		F46F772D216BA0C900C77EBA /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		F46F7732216BAFD000C77EBA /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		F46F7736216BB24500C77EBA /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				F455715A21564CCF00E00E50 /* AppDelegate.swift */,
-				F455715C21564CCF00E00E50 /* ViewController.swift */,
+				F455715C21564CCF00E00E50 /* ProfileViewController.swift */,
 				F455715E21564CCF00E00E50 /* Main.storyboard */,
 				F455716421564CD000E00E50 /* Assets.xcassets */,
 				F455716621564CD000E00E50 /* LaunchScreen.storyboard */,
 				F455716921564CD000E00E50 /* Info.plist */,
 				F455716121564CCF00E00E50 /* Chat.xcdatamodeld */,
 				F455716F21564D8B00E00E50 /* Logger.swift */,
+				F46F7727216AAA2200C77EBA /* ConversationsListViewController.swift */,
+				F46F772D216BA0C900C77EBA /* ConversationCell.swift */,
+				F46F7732216BAFD000C77EBA /* ConversationViewController.swift */,
+				F46F7736216BB24500C77EBA /* MessageCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -96,6 +108,9 @@
 		F455714F21564CCF00E00E50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					g,
+				);
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Семен Кривоносов";
@@ -141,8 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46F7733216BAFD000C77EBA /* ConversationViewController.swift in Sources */,
+				F46F7737216BB24500C77EBA /* MessageCell.swift in Sources */,
+				F46F7728216AAA2200C77EBA /* ConversationsListViewController.swift in Sources */,
 				F455716321564CCF00E00E50 /* Chat.xcdatamodeld in Sources */,
-				F455715D21564CCF00E00E50 /* ViewController.swift in Sources */,
+				F46F772E216BA0C900C77EBA /* ConversationCell.swift in Sources */,
+				F455715D21564CCF00E00E50 /* ProfileViewController.swift in Sources */,
 				F455715B21564CCF00E00E50 /* AppDelegate.swift in Sources */,
 				F455717021564D8B00E00E50 /* Logger.swift in Sources */,
 			);
