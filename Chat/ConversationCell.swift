@@ -42,7 +42,7 @@ class ConversationCell: UITableViewCell, ConversationCellConfiguration {
         didSet {
             if let date = date {
                 let dateFormatter = DateFormatter()
-                if Date().timeIntervalSince(date) < 60*60*24 {
+                if Calendar.current.isDate(Date(), inSameDayAs: date) {
                     dateFormatter.dateFormat = "HH:mm"
                     timeLabel.text = dateFormatter.string(from: date)
                 } else {
