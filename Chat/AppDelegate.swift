@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.logger.logApplicationTurnOn(methodName: #function) // actually application is moving from "not running" state
-        
+        if let cashedTheme = UserDefaults.standard.value(forKey: "Theme") as? Data, let theme = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(cashedTheme) as? UIColor {
+            UINavigationBar.appearance().barTintColor = theme
+        }
         // Override point for customization after application launch.
         return true
     }

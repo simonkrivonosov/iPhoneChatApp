@@ -97,6 +97,7 @@ class ConversationsListViewController: UITableViewController {
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toConversation" {
             if let cell = sender as? ConversationCell,
@@ -104,8 +105,28 @@ class ConversationsListViewController: UITableViewController {
                 conversationViewController.navigationItem.title = cell.name ?? "Undefined Name"
             }
         }
+        else if segue.identifier == "toThemes" {
+            guard let themesNVC = segue.destination as? UINavigationController, let themesVC = themesNVC.viewControllers.first as? ThemesViewController else { return }
+            themesVC.delegate = self
+        }
         else {
             super.prepare(for: segue, sender: sender)
         }
     }
+    @IBAction func unwindToConversationList(unwindSegue: UIStoryboardSegue) {
+        
+    }
+}
+extension ConversationsListViewController: ThemesViewControllerDelegate {
+    func themesViewController(_ controller: ThemesViewController, didSelectTheme selectedTheme: UIColor) {
+        controller.view.backgroundColor = selectedTheme
+        UINavigationBar.appearance().barTintColor = selectedTheme
+        guard let colorData =  try? NSKeyedArchiver.archivedData(withRootObject: selectedTheme, requiringSecureCoding: false) else { return }
+        UserDefaults.standard.set(colorData, forKey: "Theme")
+        logThemeChanging(selectedTheme: selectedTheme)
+    }
+    private func logThemeChanging(selectedTheme: UIColor) {
+        print(#function, selectedTheme.debugDescription)
+    }
+    
 }

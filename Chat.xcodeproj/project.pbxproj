@@ -14,6 +14,8 @@
 		F455716521564CD000E00E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F455716421564CD000E00E50 /* Assets.xcassets */; };
 		F455716821564CD000E00E50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F455716621564CD000E00E50 /* LaunchScreen.storyboard */; };
 		F455717021564D8B00E00E50 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455716F21564D8B00E00E50 /* Logger.swift */; };
+		F460927C2173B0DB002419E8 /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = F460927B2173B0DB002419E8 /* Themes.m */; };
+		F46092892173EBEE002419E8 /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46092882173EBEE002419E8 /* ThemesViewController.m */; };
 		F46F7728216AAA2200C77EBA /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F7727216AAA2200C77EBA /* ConversationsListViewController.swift */; };
 		F46F772E216BA0C900C77EBA /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F772D216BA0C900C77EBA /* ConversationCell.swift */; };
 		F46F7733216BAFD000C77EBA /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F7732216BAFD000C77EBA /* ConversationViewController.swift */; };
@@ -30,6 +32,12 @@
 		F455716721564CD000E00E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F455716921564CD000E00E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F455716F21564D8B00E00E50 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F46092792173B0AD002419E8 /* Themes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Themes.h; sourceTree = "<group>"; };
+		F460927A2173B0DB002419E8 /* Chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chat-Bridging-Header.h"; sourceTree = "<group>"; };
+		F460927B2173B0DB002419E8 /* Themes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Themes.m; sourceTree = "<group>"; };
+		F46092832173CDCE002419E8 /* ThemesViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemesViewControllerDelegate.h; sourceTree = "<group>"; };
+		F46092872173EB47002419E8 /* ThemesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemesViewController.h; sourceTree = "<group>"; };
+		F46092882173EBEE002419E8 /* ThemesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemesViewController.m; sourceTree = "<group>"; };
 		F46F7727216AAA2200C77EBA /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		F46F772D216BA0C900C77EBA /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		F46F7732216BAFD000C77EBA /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +74,8 @@
 		F455715921564CCF00E00E50 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F46092772173B06B002419E8 /* Themes */,
+				F46092762173B052002419E8 /* Objective-CSources */,
 				F455715A21564CCF00E00E50 /* AppDelegate.swift */,
 				F455715C21564CCF00E00E50 /* ProfileViewController.swift */,
 				F455715E21564CCF00E00E50 /* Main.storyboard */,
@@ -78,8 +88,28 @@
 				F46F772D216BA0C900C77EBA /* ConversationCell.swift */,
 				F46F7732216BAFD000C77EBA /* ConversationViewController.swift */,
 				F46F7736216BB24500C77EBA /* MessageCell.swift */,
+				F460927A2173B0DB002419E8 /* Chat-Bridging-Header.h */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		F46092762173B052002419E8 /* Objective-CSources */ = {
+			isa = PBXGroup;
+			children = (
+				F46092832173CDCE002419E8 /* ThemesViewControllerDelegate.h */,
+				F46092872173EB47002419E8 /* ThemesViewController.h */,
+				F46092882173EBEE002419E8 /* ThemesViewController.m */,
+			);
+			path = "Objective-CSources";
+			sourceTree = "<group>";
+		};
+		F46092772173B06B002419E8 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				F46092792173B0AD002419E8 /* Themes.h */,
+				F460927B2173B0DB002419E8 /* Themes.m */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,6 +147,7 @@
 				TargetAttributes = {
 					F455715621564CCF00E00E50 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -162,8 +193,10 @@
 				F455716321564CCF00E00E50 /* Chat.xcdatamodeld in Sources */,
 				F46F772E216BA0C900C77EBA /* ConversationCell.swift in Sources */,
 				F455715D21564CCF00E00E50 /* ProfileViewController.swift in Sources */,
+				F460927C2173B0DB002419E8 /* Themes.m in Sources */,
 				F455715B21564CCF00E00E50 /* AppDelegate.swift in Sources */,
 				F455717021564D8B00E00E50 /* Logger.swift in Sources */,
+				F46092892173EBEE002419E8 /* ThemesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +342,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HT8DC23Y9;
 				INFOPLIST_FILE = Chat/Info.plist;
@@ -320,6 +355,8 @@
 				OTHER_SWIFT_FLAGS = "-DWITH_LOG";
 				PRODUCT_BUNDLE_IDENTIFIER = Tinkoff.Chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chat/Chat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -329,6 +366,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HT8DC23Y9;
 				INFOPLIST_FILE = Chat/Info.plist;
@@ -340,6 +379,7 @@
 				OTHER_SWIFT_FLAGS = "-DWITH_LOG";
 				PRODUCT_BUNDLE_IDENTIFIER = Tinkoff.Chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chat/Chat-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
